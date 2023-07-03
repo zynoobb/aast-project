@@ -11,6 +11,8 @@ export const Wrapper = styled.div`
 
   ${mq} {
     flex-direction: column-reverse;
+    height: 100vh;
+    padding-bottom: 50px;
   }
 `;
 
@@ -44,7 +46,7 @@ export const AddWrapper = styled.div`
 `;
 
 export const IntroWrapper = styled.div`
-  width: 60%;
+  width: 100%;
   height: 300px;
   margin-left: 100px;
   display: flex;
@@ -68,6 +70,9 @@ export const MainText = styled.div`
   display: flex;
   align-items: center;
   line-height: 1.3;
+    ${mq} {
+    font-size: 28px;  
+  }
 `;
 
 export const SemiText = styled.div`
@@ -83,6 +88,11 @@ export const SemiText = styled.div`
   display: flex;
   padding-top: 10px;
   padding-left: 10px;
+  margin-bottom: 20px;
+
+  ${mq} {
+    font-size: 18px;
+  }
 `;
 
 export const NickNameButtonWrapper = styled.div`
@@ -114,13 +124,21 @@ export const NicknameInput = styled.input`
   &:hover {
     box-shadow: rgba(51, 51, 51, 0.7) 0 80px 0px 2px inset;
   }
+  ${mq} {
+    font-size: 15px;
+    width: 250px;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
   margin-top: 30px;
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
+
+  ${mmq} {
+    justify-content: flex-start;
+  }
 `;
 
 export const ShareButton = styled.button`
