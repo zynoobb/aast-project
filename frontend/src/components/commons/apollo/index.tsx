@@ -2,7 +2,8 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { useEffect } from "react";
 import { useRecoilState, RecoilEnv } from "recoil";
 import { accessTokenState } from "../../../commons/stores";
-
+import dotenv from "dotenv";
+dotenv.config();
 interface IApolloSettingProps {
   children: JSX.Element;
 }
@@ -17,7 +18,7 @@ export default function ApolloSetting(props: IApolloSettingProps): JSX.Element {
   });
 
   const client = new ApolloClient({
-    uri: process.env.URL,
+    uri: "http://localhost:4000/graphql",
     headers: { Authorization: `Bearer ${accessToken}` },
     cache: new InMemoryCache(),
   });
