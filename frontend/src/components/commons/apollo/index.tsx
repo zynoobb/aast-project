@@ -17,7 +17,7 @@ export default function ApolloSetting(props: IApolloSettingProps): JSX.Element {
   });
 
   const client = new ApolloClient({
-    uri: "http://localhost:4000/graphql",
+    uri: process.env.URL,
     headers: { Authorization: `Bearer ${accessToken}` },
     cache: new InMemoryCache(),
   });
