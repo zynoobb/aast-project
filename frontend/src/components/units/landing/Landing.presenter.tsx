@@ -19,27 +19,29 @@ export default function LandingPageUI(props: ILandingUIProps) {
                 placeholder="닉네임을 입력해주세요."
                 onChange={props.onChangeNickname}
               />
-              <S.StartButton
-                nickActive={props.nickActive}
-                onClick={props.onClickStart}
-              >
-                시작
-              </S.StartButton>
-              <CopyToClipboard
-                text={"https://asst.world"}
-                onCopy={() =>
-                  Swal.fire({
-                    icon: "success",
-                    title: "클립보드에 복사되었습니다.",
-                    showConfirmButton: false,
-                    timer: 700,
-                  })
-                }
-              >
-                <S.ShareButton style={{ marginLeft: "20px" }}>
-                  공유
-                </S.ShareButton>
-              </CopyToClipboard>
+              <S.ButtonWrapper>
+                <S.StartButton
+                  nickActive={props.nickActive}
+                  onClick={props.onClickStart}
+                >
+                  시작
+                </S.StartButton>
+                <CopyToClipboard
+                  text={"https://asst.world"}
+                  onCopy={() =>
+                    Swal.fire({
+                      icon: "success",
+                      title: "클립보드에 복사되었습니다.",
+                      showConfirmButton: false,
+                      timer: 700,
+                    })
+                  }
+                >
+                  <S.ShareButton style={{ marginLeft: "20px" }}>
+                    공유
+                  </S.ShareButton>
+                </CopyToClipboard>
+              </S.ButtonWrapper>
             </S.NickNameButtonWrapper>
           </S.IntroWrapper>
         </S.LeftColumn>

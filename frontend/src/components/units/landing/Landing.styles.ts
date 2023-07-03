@@ -1,12 +1,14 @@
 import styled from "@emotion/styled";
 const mq = `@media (max-width : 576px)`;
+const mmq = `@media (max-width : 400px)`;
 
 export const Wrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: #3a3a3a;
   display: flex;
   justify-content: space-between;
+
   ${mq} {
     flex-direction: column-reverse;
   }
@@ -87,6 +89,7 @@ export const NickNameButtonWrapper = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   ${mq} {
     margin-top: 20px;
   }
@@ -111,6 +114,13 @@ export const NicknameInput = styled.input`
   &:hover {
     box-shadow: rgba(51, 51, 51, 0.7) 0 80px 0px 2px inset;
   }
+`;
+
+export const ButtonWrapper = styled.div`
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 `;
 
 export const ShareButton = styled.button`
