@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
 const mq = `@media (max-width : 576px)`;
 const tq = `@media (min-width: 577px) and (max-width: 1024px)`;
+const mmq = `@media (max-width : 400px)`;
 
 export const globalStyles = css`
   * {
@@ -47,13 +48,19 @@ export const globalStyles = css`
   }
 
   .css-dev-only-do-not-override-12upa3x {
+    padding: 0;
     ${mq} {
-      font-size: 10px !important;
+      font-size: 12px !important;
     }
 
     ${tq} {
       font-size: 12px !important;
       width: 100%;
+    }
+
+    ${mmq} {
+      margin: 0;
+      font-size: 2px !important;
     }
   }
 `;

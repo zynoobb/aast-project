@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 const mq = `@media (max-width : 576px)`;
 const tq = `@media (min-width: 577px) and (max-width: 1024px)`;
+const mmq = `@media (max-width : 400px)`;
 
 export const QuestionWrapper = styled.div`
   width: 80%;
@@ -22,6 +23,11 @@ export const QuestionWrapper = styled.div`
     height: 100px;
     margin-top: 30px;
   }
+  ${mmq} {
+    width: 95%;
+    height: 90px;
+    margin-top: 25px;
+  }
 `;
 
 export const QuestionArea = styled.div`
@@ -30,6 +36,12 @@ export const QuestionArea = styled.div`
   ${mq} {
     padding: 5px;
     font-size: 0.9em;
+  }
+
+  ${mmq} {
+    width: 95%;
+    height: 40px;
+    font-size: 0.8em;
   }
 `;
 
@@ -47,6 +59,9 @@ export const SelectArea = styled.div`
   ${tq} {
     height: 100px;
     margin-top: 20px;
+  }
+  ${mmq} {
+    height: 40px;
   }
 `;
 
