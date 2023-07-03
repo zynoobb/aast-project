@@ -1,0 +1,55 @@
+version: "3.7"
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: database
+    restart: always
+    ports:
+      - 3306:3306
+    env_file:
+      - .env
+    volumes:
+      - mysql:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: aast
+      MYSQL_ROOT_PASSWORD: root
+      TZ: "Asia/Seoul"
+
+  server:
+    build:
+      context: ./backend/
+      dockerfile: Dockerfile
+    container_name: backend
+    restart: always
+    ports:
+      - 4000:4000
+    depends_on:
+      - mysql
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+    env_file:
+      - .env
+    volumes:
+      - ./backend/src:/folder/src
+
+  front:
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - 3000:3000
+    env_file:
+      - .env
+    depends_on:
+      - server
+    volumes:
+      - ./frontend/src:/app/src
+
+volumes:
+  server:
+  front:
+  mysql:
