@@ -54,13 +54,13 @@ export const globalStyles = css`
     }
 
     ${tq} {
-      font-size: 12px !important;
+      font-size: 11px !important;
       width: 100%;
     }
 
     ${mmq} {
       margin: 0;
-      font-size: 2px !important;
+      font-size: 10px !important;
     }
   }
 `;
