@@ -43,7 +43,6 @@ export const AddWrapper = styled.div`
     width: 100%;
     height: 10vh;
   }
-  background-color: black;
 `;
 
 export const IntroWrapper = styled.div`
