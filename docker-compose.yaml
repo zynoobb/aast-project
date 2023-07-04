@@ -31,7 +31,7 @@ services:
       DB_HOST: mysql
       DB_PORT: 3306
     env_file:
-      - .env
+      - ./backend/.env
     volumes:
       - ./backend/src:/folder/src
 
@@ -43,11 +43,12 @@ services:
     ports:
       - 3000:3000
     env_file:
-      - .env
+      - ./frontend/.env
     depends_on:
       - server
     volumes:
       - ./frontend/src:/app/src
+      - ./frontend/pages:/app/pages
 
 volumes:
   server:

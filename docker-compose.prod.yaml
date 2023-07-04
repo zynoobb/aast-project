@@ -8,7 +8,7 @@ services:
   #   ports:
   #     - 3306:3306
   #   env_file:
-  #     - .env.prod
+  #     - ./backend/.env.prod
   #   volumes:
   #     - mysql:/var/lib/mysql
   #   command: --default-authentication-plugin=mysql_native_password
@@ -31,24 +31,31 @@ services:
       DB_HOST: mysql
       DB_PORT: 3306
     env_file:
-      - .env.prod
+      - ./backend/.env.prod
     # volumes:
     #   - ./backend/src:/folder/src
 
   front:
     build:
       context: ./frontend/
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.prod
     container_name: frontend
     ports:
       - 3000:3000
     env_file:
-      - .env.prod
+      - ./frontend/.env.prod
     depends_on:
       - server
-#     volumes:
-#       - ./frontend/src:/app/src
+  #     volumes:
+  #       - ./frontend/src:/app/src
 
+  nginx:
+    image: nginx:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
 # volumes:
 #   server:
 #   front:
