@@ -4,11 +4,11 @@ const mmq = `@media (max-width : 400px)`;
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: #3a3a3a;
   display: flex;
   justify-content: space-between;
-
+  z-index: -1;
   ${mq} {
     flex-direction: column-reverse;
     height: 100vh;
@@ -43,6 +43,7 @@ export const AddWrapper = styled.div`
     width: 100%;
     height: 10vh;
   }
+  background-color: black;
 `;
 
 export const IntroWrapper = styled.div`
@@ -100,6 +101,7 @@ export const NickNameButtonWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  z-index: 1;
   ${mq} {
     margin-top: 20px;
   }
@@ -161,4 +163,17 @@ export const StartButton = styled(ShareButton)<{ nickActive: boolean }>`
   &:hover {
     box-shadow: rgba(51, 51, 51, 0.7) 0 80px 0px 2px inset;
   }
+`;
+
+export const CoverImg = styled.img`
+  width: 75%;
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+
+  ${mq} {
+    width: 100%;
+    background-position: center;
+  }
+  transform: translateX(-30%);
 `;

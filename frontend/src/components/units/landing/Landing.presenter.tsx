@@ -7,6 +7,7 @@ export default function LandingPageUI(props: ILandingUIProps) {
   return (
     <>
       <S.Wrapper>
+        <S.CoverImg src="/images/cover.png" />
         <S.LeftColumn>
           <S.IntroWrapper>
             <S.MainText>
