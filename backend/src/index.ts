@@ -9,7 +9,7 @@ dotenv.config();
 
 const serverStarter = async () => {
   const app = express();
-  app.use(cors({ origin: "*" })); // 임시
+  app.use(cors({ origin: process.env.ORIGIN }));
   app.use(express.json());
 
   app.use((error, req, res, next) => {
