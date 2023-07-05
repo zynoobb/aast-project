@@ -4,6 +4,11 @@ export default function Document(): JSX.Element {
   return (
     <Html lang="ko">
       <Head />
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6719485849235467"
+        crossOrigin="anonymous"
+      ></script>
       <meta property="og:title" content="ASST" />
       <meta
         property="og:description"
