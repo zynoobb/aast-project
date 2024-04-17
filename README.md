@@ -140,3 +140,5 @@ ETC
 - 프로젝트 이름인 “ASST” 를 종묘 기왓장 모양으로 형상화하였습니다.
 
 ![로고](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbfiLOf%2FbtsnLuXUSnt%2F9cZTLpYh8szR6C8lGiN8T1%2Fimg.png)
+
+'ssh Test'
